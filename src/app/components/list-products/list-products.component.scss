@@ -1,5 +1,6 @@
 .float{
   float: right;
+  margin-bottom: 16px;
 }
 i{
   cursor: pointer;
@@ -7,4 +8,18 @@ i{
 .fas{
   margin-right: 12px;
 }
-
+.tabla{
+  text-align: center;
+}
+.prod{
+  margin: 6px;
+}
+.th{
+  padding-left: 9px;
+}
+.tr{
+  border-bottom: 1px solid;
+}
+.td{
+  padding-left: 15px;
+}

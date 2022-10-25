@@ -1,5 +1,47 @@
-
-<table class="table mt-5 table-striped">
+<div>
+  <div *ngFor="let producto of ajustes">
+    <div>sabor 1:
+      {{producto.sabor01}}
+    </div>
+    <div>sabor 2:
+      {{producto.sabor02}}
+    </div>
+    <div>sabor 3:
+      {{producto.sabor03}}
+    </div>
+    <div>sabor 4:
+      {{producto.sabor04}}
+    </div>
+    <div>sabor 5:
+      {{producto.sabor05}}
+    </div>
+    <div>sabor 6
+      {{producto.sabor06}}
+    </div>
+    <div>sabor 7:
+      {{producto.sabor07}}
+    </div>
+    <div>sabor 8:
+      {{producto.sabor08}}
+    </div>
+    <div>sabor 9:
+      {{producto.sabor09}}
+    </div>
+    <div>sabor 10:
+      {{producto.sabor10}}
+    </div>
+    <div>sabor 11:
+      {{producto.sabor11}}
+    </div>
+    <div>sabor 12:
+      {{producto.sabor12}}
+    </div>
+    <div>
+      <i class="fas fa-edit fa-lg text-danger" [routerLink]="['/adjust/',producto.id]"></i>
+    </div>
+  </div>
+</div>
+<!-- <table class="teibol">
   <thead>
     <tr>
       <th>sabor 1</th>
@@ -37,6 +79,6 @@
 
 
   </tbody>
-</table>
+</table> -->
 
 <!-- <button class="btn btn-dark btn-lg" routerLink="/crear">Modo desarollador</button> -->
