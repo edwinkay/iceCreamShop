@@ -7,7 +7,7 @@
 
       </div><br>
       <h5 *ngIf="productos.length == 0" class="mt-5">No hay productos agregados</h5>
-      <table *ngIf="productos.length > 0" class="tabla">
+      <!-- <table *ngIf="productos.length > 0" class="tabla">
         <thead>
           <tr>
             <th class="th">Mesa</th>
@@ -25,13 +25,40 @@
             <td class="td">{{producto.flavor}}<br>{{producto.flavor2}}<br>{{producto.flavor3}}</td>
             <td class="td">{{producto.price | currency:'$':'symbol':'3.0'}}</td>
             <td class="td">{{producto.note}}</td>
+            <td>
               <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-product/', producto.id]"></i>
               <i (click)="eliminarProducto(producto.id)" class="fas fa-trash-alt fa-lg text-danger mt-2"></i>
+            </td>
+
           </tr>
 
+        </tbody>
+      </table> -->
 
+
+      <table *ngIf="productos.length > 0" class="table">
+        <thead>
+          <th class="th">Mesa</th>
+          <th class="th">Producto</th>
+          <th class="th">Sabor(es)</th>
+          <th class="th">Precio</th>
+          <th class="th">Nota</th>
+          <th class="th"></th>
+        <tbody>
+          <tr class="tr" *ngFor="let producto of productos">
+            <td data-label="Mesa:" class="td">{{producto.table}}</td>
+            <td data-label="Producto:" class="td">{{producto.product}}</td>
+            <td data-label="Sabor(es):" class="td">{{producto.flavor}}<br>{{producto.flavor2}}<br>{{producto.flavor3}}</td>
+            <td data-label="Precio:" class="td">{{producto.price | currency:'$':'symbol':'3.0'}}</td>
+            <td data-label="Agregar Nota:" class="td">{{producto.note}}</td>
+            <td style="padding-left: 136px; border-bottom: 1px solid;">
+              <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-product/', producto.id]"></i>
+              <i (click)="eliminarProducto(producto.id)" class="fas fa-trash-alt fa-lg text-danger mt-2"></i>
+            </td>
+          </tr>
         </tbody>
       </table>
+
       <!-- <ul>
         <li class="text" *ngFor="let item of items | async">
           {{item.name}}

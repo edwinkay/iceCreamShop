@@ -1,6 +1,14 @@
 .float{
-  float: right;
-  margin-bottom: 16px;
+  display: flex;
+    justify-content: flex-end;
+    margin-right: 6px;
+}
+.h5{
+
+    position: relative;
+    top: 39px;
+    left: 16px;
+
 }
 i{
   cursor: pointer;
@@ -8,18 +16,75 @@ i{
 .fas{
   margin-right: 12px;
 }
-.tabla{
+
+// .tabla{
+//   text-align: center;
+// }
+// .prod{
+//   margin: 6px;
+// }
+// .th{
+//   padding-left: 9px;
+// }
+// .tr{
+//   border-bottom: 1px solid;
+// }
+// .td{
+//   padding-left: 15px;
+// }
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  padding: 3px 15px;
   text-align: center;
+  font-size: 16px;
 }
-.prod{
-  margin: 6px;
+
+.table th {
+  background-color: #92c9e6;
+  color: #ffffff;
 }
-.th{
-  padding-left: 9px;
+
+.table tbody tr:nth-child(even) {
+  background-color: #d9ff0026;
 }
-.tr{
-  border-bottom: 1px solid;
-}
-.td{
-  padding-left: 15px;
+
+/*responsive*/
+
+@media (max-width: 500px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    padding-left: 50%;
+    text-align: left;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
 }

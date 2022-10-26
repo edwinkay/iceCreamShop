@@ -1,8 +1,28 @@
-<nav class="navbar navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a routerLink="/" class="navbar-brand mb-0 h1">HELADERIA DIMI</a>
   </div>
   <div class="adjust" [routerLink]="['/mod/']">
     Ajustes
   </div>
+</nav> -->
+<nav class="nav">
+  <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
+  <label for="nav__checkbox" class="nav__toggle">
+    <img src="https://www.clipartmax.com/png/full/36-365828_navbar-toggle-icon-menu-hamburger-png-white.png" class="hamburger" />
+    <span class="close">X</span>
+    <!-- <img src="https://img.icons8.com/plumpy/30/000000/x.png" class="close" /> -->
+
+  </label>
+
+  <ul class="nav__menu">
+    <li>
+      <span style="color: rgba(255, 255, 255, 0);" >
+        B
+      </span>
+    </li>
+    <li class="menu"><a style="color: white;" [routerLink]="['/mod/']">Ajustar sabores</a></li>
+
+  </ul>
+
 </nav>
