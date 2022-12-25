@@ -1,39 +1,49 @@
 <div>
   <div *ngFor="let producto of ajustes">
-    <div>sabor 1:
-      {{producto.sabor01}}
+    <div *ngIf="producto.sabor01 !== ''; else elseBlock">sabor 1: {{ producto.sabor01}}
     </div>
-    <div>sabor 2:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor02 !== ''; else elseBlock">sabor 2:
       {{producto.sabor02}}
     </div>
-    <div>sabor 3:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor03 !== ''; else elseBlock">sabor 3:
       {{producto.sabor03}}
     </div>
-    <div>sabor 4:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor04 !== ''; else elseBlock">sabor 4:
       {{producto.sabor04}}
     </div>
-    <div>sabor 5:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor05 !== ''; else elseBlock">sabor 5:
       {{producto.sabor05}}
     </div>
-    <div>sabor 6
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor06 !== ''; else elseBlock">sabor 6
       {{producto.sabor06}}
     </div>
-    <div>sabor 7:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor07 !== ''; else elseBlock">sabor 7:
       {{producto.sabor07}}
     </div>
-    <div>sabor 8:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor08 !== ''; else elseBlock">sabor 8:
       {{producto.sabor08}}
     </div>
-    <div>sabor 9:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor09 !== ''; else elseBlock">sabor 9:
       {{producto.sabor09}}
     </div>
-    <div>sabor 10:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor10 !== ''; else elseBlock">sabor 10:
       {{producto.sabor10}}
     </div>
-    <div>sabor 11:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor11 !== ''; else elseBlock">sabor 11:
       {{producto.sabor11}}
     </div>
-    <div>sabor 12:
+    <ng-template #elseBlock></ng-template>
+    <div *ngIf="producto.sabor12 !== ''; else elseBlock">sabor 12:
       {{producto.sabor12}}
     </div>
     <div>

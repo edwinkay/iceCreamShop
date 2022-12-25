@@ -12,6 +12,12 @@ import { ProductService } from 'src/app/services/product.service';
 export class ListProductsComponent implements OnInit {
   //creando un array
   productos: any[] = []
+  sumas: any[] = []
+  total: any[] = []
+
+
+
+
 
   // items: Observable<any[]>;
 
@@ -36,14 +42,33 @@ export class ListProductsComponent implements OnInit {
       data.forEach((element:any) => {
         // console.log(element.payload.doc.id)
         // console.log(element.payload.doc.data())
+        // const sumar = element.payload.doc.data()['price']
+
+        // console.log(sumar)
+
+        // this.sumas.push(
+        //   sumar
+        // )
+
+        //     const newSuma = this.sumas.reduce((sum, item) => sum + item, 0)
+
+
+
+
+        // this.total.push(
+        //   newSuma
+        //   )
+        //   console.log(this.sumas)
 
         //desde los enviamos al array de arriba
         this.productos.push({
           id: element.payload.doc.id,
-          ...element.payload.doc.data()
+          ...element.payload.doc.data(),
         })
       });
       // console.log(this.productos)
+
+      
     })
   }
   //dando funcion al boton delete
