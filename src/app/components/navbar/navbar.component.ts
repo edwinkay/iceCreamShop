@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  today = new Date();
+  date = new Date(2021, 1, 21);
 
   constructor() { }
 

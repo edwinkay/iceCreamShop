@@ -7,6 +7,7 @@
   </div>
 </nav> -->
 <nav class="nav">
+  <span style="margin-left: 12px; margin-top: 6px;">{{today | date:'d, MMM y, EEEE h:mm:ss a' }}</span>
   <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
   <label for="nav__checkbox" class="nav__toggle">
     <img src="https://www.clipartmax.com/png/full/36-365828_navbar-toggle-icon-menu-hamburger-png-white.png" class="hamburger" />
@@ -21,8 +22,9 @@
         B
       </span>
     </li>
-    <li class="menu"><a style="color: white;" [routerLink]="['/mod/']">Ajustar sabores</a></li>
+    <li class="menu"><a style="color: white; position: relative; right: 67px;" [routerLink]="['/mod/']">Ajustar sabores</a></li>
 
   </ul>
+
 
 </nav>

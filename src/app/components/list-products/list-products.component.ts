@@ -13,7 +13,8 @@ export class ListProductsComponent implements OnInit {
   //creando un array
   productos: any[] = []
   sumas: any[] = []
-  total: any[] = []
+  total: number
+  all: any[] = []
 
 
 
@@ -38,37 +39,21 @@ export class ListProductsComponent implements OnInit {
   getProducts(){
     this._services.getProducts().subscribe(data => {
       this.productos =[]
-      // console.log(data)
-      data.forEach((element:any) => {
-        // console.log(element.payload.doc.id)
-        // console.log(element.payload.doc.data())
-        // const sumar = element.payload.doc.data()['price']
-
-        // console.log(sumar)
-
-        // this.sumas.push(
-        //   sumar
-        // )
-
-        //     const newSuma = this.sumas.reduce((sum, item) => sum + item, 0)
-
-
-
-
-        // this.total.push(
-        //   newSuma
-        //   )
-        //   console.log(this.sumas)
-
-        //desde los enviamos al array de arriba
+        data.forEach((element:any) => {
         this.productos.push({
           id: element.payload.doc.id,
           ...element.payload.doc.data(),
-        })
-      });
-      // console.log(this.productos)
+        });
+        const total = this.productos.reduce(
+          (acumulador, producto) => acumulador + producto.price,
+          0
+        );
+        this.total = total;
+        console.log(total)
 
-      
+      });
+
+
     })
   }
   //dando funcion al boton delete

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -14,6 +14,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdjustComponent } from './components/adjust/adjust.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
+
+
+import localeES from '@angular/common/locales/es'
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeES, 'es');
 
 @NgModule({
   declarations: [
@@ -37,7 +42,7 @@ import { ModificarComponent } from './components/modificar/modificar.component';
   }
     )
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,8 +7,9 @@
 
       </div><br>
       <h5 *ngIf="productos.length == 0" class="mt-5">No hay productos agregados</h5>
+      <div style="padding-left: 16px;
+    margin-bottom: 13px;">Total = {{total}}</div>
 
-      <div>{{productos[1]}}</div>
 
        <table *ngIf="productos.length > 0" class="table">
         <thead>
@@ -23,7 +24,7 @@
             <td data-label="Mesa:" class="td">{{producto.table}}</td>
             <td data-label="Producto:" class="td">{{producto.product}}</td>
             <td data-label="Sabor(es):" class="td">{{producto.flavor}}<br>{{producto.flavor2}}<br>{{producto.flavor3}}</td>
-            <td data-label="Precio:" class="td">{{producto.price | currency:'$':'symbol':'3.0'}}</td>
+            <td data-label="Precio:" class="td">${{producto.price | currency:' ':'symbol':'3.0'}}</td>
             <td data-label="Agregar Nota:" class="td">{{producto.note}}</td>
             <td style="padding-left: 136px; border-bottom: 1px solid;">
               <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-product/', producto.id]"></i>

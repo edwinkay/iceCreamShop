@@ -1,63 +1,99 @@
 <div class="add">
   <div class="">
     <div class="">
-      <div class="card text-white bg-secondary mb-3" style="max-width: 25rem;">
-        <h3 class="card-header text-center">{{titleChange}}
+      <div class="card text-white bg-secondary mb-3" style="max-width: 25rem">
+        <h3 class="card-header text-center">
+          {{ titleChange }}
           <div *ngIf="loading" class="spn spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </h3>
         <div class="card-body">
-          <span *ngIf="subbmited && createProduct.invalid">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-          <form class="mt-4 content-select" [formGroup]="createProduct" (ngSubmit)="agregarEditarProducto()">
+          <span *ngIf="subbmited && createProduct.invalid"
+            >TODOS LOS CAMPOS SON OBLIGATORIOS</span
+          >
+          <form
+            class="mt-4 content-select"
+            [formGroup]="createProduct"
+            (ngSubmit)="agregarEditarProducto()"
+          >
             <div class="selector">
               <p>Elegir Mesa</p>
               <select id="table" formControlName="table">
-                <option *ngFor="let select of mesa" [ngValue]="select">{{select}}</option>
+                <option *ngFor="let select of mesa" [ngValue]="select">
+                  {{ select }}
+                </option>
               </select>
               <p>Elegir Producto</p>
-              <select id="product" formControlName="product">
-                <option *ngFor="let select of productos" [ngValue]="select">{{select}}</option>
+              <select
+                id="product"
+                (change)="onProductSelected($event)"
+                formControlName="product"
+              >
+                <option
+                  *ngFor="let select of products"
+                  [ngValue]="select.nombre"
+                >
+                  {{ select.nombre }}
+                </option>
               </select>
             </div>
             <div class="flavors">
               <div class="sabor">
                 <p>Sabor 1</p>
                 <select id="flavor" formControlName="flavor">
-                  <option *ngFor="let select of flavors"
-                  [ngValue]="select">{{select}}</option>
+                  <option *ngFor="let select of flavors" [ngValue]="select">
+                    {{ select }}
+                  </option>
                 </select>
               </div>
               <div class="sabor">
                 <p>Sabor 2</p>
                 <select id="flavor2" formControlName="flavor2">
-                  <option *ngFor="let select of flavors" [ngValue]="select">{{select}}</option>
+                  <option *ngFor="let select of flavors" [ngValue]="select">
+                    {{ select }}
+                  </option>
                 </select>
               </div>
               <div class="sabor">
                 <p>Sabor 3</p>
                 <select id="flavor3" formControlName="flavor3">
-                  <option *ngFor="let select of flavors" [ngValue]="select">{{select}}</option>
+                  <option *ngFor="let select of flavors" [ngValue]="select">
+                    {{ select }}
+                  </option>
                 </select>
               </div>
             </div>
             <div class="selector">
               <p>Precio</p>
-              <select id="price" formControlName="price">
-                <option *ngFor="let select of prices" [ngValue]="select">{{select}}</option>
-              </select>
+              <input
+                type="number"
+                class="form-control mt-2 text-center"
+                [(ngModel)]="selectedProductPrice"
+                formControlName="price"
+              />
             </div>
+
             <div class="col">
-              <input type="text" class="form-control mt-2 text-center" placeholder="Agregar nota" formControlName="note">
+              <input
+                type="text"
+                class="form-control mt-2 text-center"
+                placeholder="Agregar nota"
+                formControlName="note"
+              />
             </div>
             <div class="mt-3 text-center">
-              <button type="text" class="btn btn-secondary btn-lg mr-3" routerLink="/">Regresar</button>
+              <button
+                type="text"
+                class="btn btn-secondary btn-lg mr-3"
+                routerLink="/"
+              >
+                Regresar
+              </button>
               <button type="submit" class="btn btn-dark btn-lg">Aceptar</button>
             </div>
           </form>
         </div>
-
-
       </div>
     </div>
   </div>
