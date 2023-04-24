@@ -11,3 +11,19 @@ body{
 // background-size: cover;
 // height: 100vh;
 }
+.modificar-modal .p-dialog{
+    transform: scale3d(1.5, 1.5, 1.5);
+    background-color: #a53dc7;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 7%;
+    border-radius: 9px;
+}
+.modificar-modal .p-dialog-mask{
+  align-items: baseline;
+  background-color: #0000008c
+
+}

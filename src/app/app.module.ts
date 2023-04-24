@@ -14,6 +14,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdjustComponent } from './components/adjust/adjust.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 import localeES from '@angular/common/locales/es'
@@ -35,6 +37,8 @@ registerLocaleData(localeES, 'es');
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    DialogModule,
+    FormsModule,
     ToastrModule.forRoot({
     timeOut: 4000,
     positionClass: 'toast-bottom-right',
