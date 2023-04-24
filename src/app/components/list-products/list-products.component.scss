@@ -10,6 +10,10 @@
     left: 16px;
 
 }
+.options{
+  display: flex;
+  justify-content: space-evenly;
+}
 i{
   cursor: pointer;
 }
@@ -38,7 +42,6 @@ i{
   width: 100%;
   border-collapse: collapse;
 }
-
 .table td,
 .table th {
   padding: 3px 15px;
@@ -86,5 +89,13 @@ i{
     font-size: 15px;
     font-weight: bold;
     text-align: left;
+  }
+  .total{
+    border: 1px solid aquamarine;
+    border-radius: 6px;
+    height: 35px;
+    padding: 4px;
+    background-color: #f8f87d;
+    color: fuchsia;
   }
 }

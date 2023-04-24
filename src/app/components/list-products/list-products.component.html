@@ -7,8 +7,21 @@
 
       </div><br>
       <h5 *ngIf="productos.length == 0" class="mt-5">No hay productos agregados</h5>
-      <div style="padding-left: 16px;
-    margin-bottom: 13px;">Total = {{total}}</div>
+      <div class="options">
+        <div class="total">
+          <span >Total: {{total | currency:' ':'symbol':'3.0'}}
+         </span>
+        </div>
+         <div>
+          <button style="background-color: green;
+    padding: 5px 19px; margin-bottom: 12px;" class="btn btn-success">pagar</button>
+         </div>
+         <div>
+          <button style="background-color: red;
+    padding: 5px 19px;" class="btn btn-danger">Eliminar Productos</button>
+         </div>
+      </div>
+
 
 
        <table *ngIf="productos.length > 0" class="table">
