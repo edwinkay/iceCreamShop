@@ -17,6 +17,7 @@
         </div>
         <div>
           <button
+            [disabled]="buttonDisabled"
             (click)="showDialog()"
             style="
               background-color: green;
@@ -25,7 +26,7 @@
             "
             class="btn btn-success"
           >
-            pagar
+            Pagar
           </button>
           <p-dialog
             class="modificar-modal"
@@ -36,8 +37,12 @@
             [responsive]="true"
             [dismissableMask]="true"
           >
-            <span>Total: ${{ total | currency : " " : "symbol" : "3.0" }} </span>
-            <p>Devuelta: ${{resultado | currency : " " : "symbol" : "3.0" }}</p>
+            <span
+              >Total: ${{ total | currency : " " : "symbol" : "3.0" }}
+            </span>
+            <p>
+              Devuelta: ${{ resultado | currency : " " : "symbol" : "3.0" }}
+            </p>
             <label style="margin: 6px"
               >¿pagan con $$$?
               <input
@@ -71,13 +76,55 @@
             </div>
           </p-dialog>
         </div>
-        <div>
+        <div style="text-align: center">
           <button
+            [disabled]="buttonDisabled"
+            (click)="showDialog2()"
             style="background-color: red; padding: 5px 19px"
             class="btn btn-danger"
           >
             Eliminar Productos
           </button>
+          <p-dialog
+            class="modificar-modal mover"
+            header="¿Estas seguro?"
+            [(visible)]="displayModal2"
+            [modal]="true"
+            [style]="{ width: '50%' }"
+            [responsive]="true"
+            [dismissableMask]="true"
+          >
+            <span
+              >Al hacer esto eliminaras todos los productos agregados sin
+              registrar.</span
+            >
+            <div class="botones">
+              <button
+                (click)="onDialogHide()"
+                style="
+                  background-color: rgb(209, 149, 19);
+                  padding: 3px;
+                  margin-top: 11px;
+                  margin-bottom: 30px;
+                "
+                class="btn btn-success"
+              >
+                Cancelar
+              </button>
+              <button
+                (click)="borrarTodo()"
+                style="
+                  background-color: rgb(140, 31, 63);
+                  padding: 3px;
+                  margin-top: 11px;
+                  margin-bottom: 30px;
+                "
+                class="btn btn-success"
+              >
+                Borrar productos
+              </button>
+            </div>
+          </p-dialog>
         </div>
       </div>
 
@@ -104,7 +151,7 @@
               ${{ producto.price | currency : " " : "symbol" : "3.0" }}
             </td>
             <td data-label="Agregar Nota:" class="td">{{ producto.note }}</td>
-            <td style="padding-left: 136px; border-bottom: 1px solid">
+            <td style="padding-left: 173px; border-bottom: 1px solid">
               <i
                 class="fas fa-edit fa-lg text-info"
                 [routerLink]="['/edit-product/', producto.id]"
@@ -120,5 +167,3 @@
     </div>
   </div>
 </div>
-
-
