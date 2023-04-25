@@ -131,7 +131,7 @@
 
       <table *ngIf="productos.length > 0" class="table">
         <thead>
-          <th class="th">Mesa</th>
+          <!-- <th class="th">Mesa</th> -->
           <th class="th">Producto</th>
           <th class="th">Sabor(es)</th>
           <th class="th">Precio</th>
@@ -141,7 +141,7 @@
 
         <tbody>
           <tr class="tr" *ngFor="let producto of productos">
-            <td data-label="Mesa:" class="td">{{ producto.table }}</td>
+            <!-- <td data-label="Mesa:" class="td">{{ producto.table }}</td> -->
             <td data-label="Producto:" class="td">{{ producto.product }}</td>
             <td data-label="Sabor(es):" class="td">
               {{ producto.flavor }}<br />{{ producto.flavor2 }}<br />{{

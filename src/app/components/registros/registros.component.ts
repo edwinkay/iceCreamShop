@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrosService } from 'src/app/services/registros.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-registros',
@@ -15,7 +16,6 @@ export class RegistrosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRegistros();
-        console.log(this.contar(this.registros))
   }
   getRegistros() {
     this._registroService.obtenerRegistros().subscribe((data) => {
@@ -33,6 +33,7 @@ export class RegistrosComponent implements OnInit {
       this.total = total;
 
       const prod = this.registros.map((element) => element.producto);
+
 
       for (const item of this.registros) {
         const fecha = item.fechaCreacion;
@@ -60,15 +61,19 @@ export class RegistrosComponent implements OnInit {
   joinArray(arr: string[], separator: string): string {
     return arr.join(separator);
   }
-  contar(arr: any[]){
-    const mapa = new Map();
-      arr.forEach((elemento) => {
-        if (mapa.has(elemento)) {
-          mapa.set(elemento, mapa.get(elemento) + 1);
-        } else {
-          mapa.set(elemento, 1);
-        }
-      });
-      return mapa;
+  countOccurrences(arr: string[]): string[] {
+    const result = [];
+    const count: Record<string, number> = {};
+    for (const item of arr) {
+      if (item in count) {
+        count[item] += 1;
+      } else {
+        count[item] = 1;
+      }
+    }
+    for (const [item, occ] of Object.entries(count)) {
+      result.push(`${item}${occ > 1 ? ' x' + occ : ''}`);
+    }
+    return result;
   }
 }

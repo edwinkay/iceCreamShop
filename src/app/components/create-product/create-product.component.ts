@@ -94,7 +94,7 @@ export class CreateProductComponent implements OnInit {
     private aRouter: ActivatedRoute
   ) {
     this.createProduct = this.fb.group({
-      table: ['', Validators.required],
+      // table: ['', Validators.required],
       product: ['', Validators.required],
       flavor: [''],
       flavor2: [''],
@@ -129,7 +129,7 @@ export class CreateProductComponent implements OnInit {
   agregarProducto() {
     //se captura desde el html
     const producto: any = {
-      table: this.createProduct.value.table,
+      // table: this.createProduct.value.table,
       product: this.createProduct.value.product,
       flavor: this.createProduct.value.flavor,
       flavor2: this.createProduct.value.flavor2,
@@ -159,7 +159,7 @@ export class CreateProductComponent implements OnInit {
     this.loading = true;
 
     const producto: any = {
-      table: this.createProduct.value.table,
+      // table: this.createProduct.value.table,
       product: this.createProduct.value.product,
       flavor: this.createProduct.value.flavor,
       flavor2: this.createProduct.value.flavor2,
@@ -187,7 +187,7 @@ export class CreateProductComponent implements OnInit {
 
         //enviando datos a editar
         this.createProduct.setValue({
-          table: data.payload.data()['table'],
+          // table: data.payload.data()['table'],
           product: data.payload.data()['product'],
           flavor: data.payload.data()['flavor'],
           flavor2: data.payload.data()['flavor2'],

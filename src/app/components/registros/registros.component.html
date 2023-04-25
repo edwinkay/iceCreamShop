@@ -14,9 +14,9 @@
             style="border-bottom: 1px solid rgb(255, 255, 255)"
             *ngFor="let registro of registros"
           >
-            <td>{{ registro.fechaCreacion }}</td>
-            <td>{{ joinArray(registro.producto, ", ") }}</td>
-            <td>{{ registro.total | currency : " " : "symbol" : "3.0" }}</td>
+            <td style="width: 30%;">{{ registro.fechaCreacion }}</td>
+            <td style="width: 37%;">{{ countOccurrences(registro.producto).join(', ') }}</td>
+            <td style="width: 12%;">{{ registro.total | currency : " " : "symbol" : "3.0" }}</td>
           </tr>
         </tbody>
       </table>

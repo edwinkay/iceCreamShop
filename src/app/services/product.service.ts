@@ -17,8 +17,7 @@ export class ProductService {
   //metos orderBy para ordenar
   getProducts(): Observable<any> {
     return this.firestore
-      .collection('productos', (ref) => ref.orderBy('table', 'asc'))
-      .snapshotChanges();
+      .collection('productos').snapshotChanges();
   }
 
   //eliminar productos
