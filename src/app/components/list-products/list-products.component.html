@@ -12,8 +12,14 @@
         No hay productos agregados
       </h5>
       <div class="options">
-        <div class="total">
-          <span>Total: {{ total | currency : " " : "symbol" : "3.0" }} </span>
+        <div>
+          <button style="
+              background-color: rgb(255, 238, 0);
+              padding: 5px 19px;
+              margin-bottom: 12px;
+              color: rgb(245, 5, 165);
+            "
+            class="btn btn-success">Total: {{ total | currency : " " : "symbol" : "3.0" }} </button>
         </div>
         <div >
           <button

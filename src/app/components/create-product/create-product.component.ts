@@ -25,41 +25,6 @@ export class CreateProductComponent implements OnInit {
   //////////////////////////////////////////////
 
   mesa: string[] = ['Mesa #1', 'Mesa #2', 'Mesa #3', 'Mesa #4', 'Mesa #5'];
-  productos: string[] = [
-    '',
-    'Ensalada pequeña',
-    ' Ensalada Grande',
-    'Estrella',
-    'Banana Split',
-    'Fresa Split',
-    'Copa cereza',
-    'Copa Oreo',
-    'Copa queso',
-    'Copa Arequipe',
-    'Banano Queso',
-    'Copa kiwi',
-    'helado chocorramo',
-    'Helado corazon',
-    'Malteada',
-    'Milo',
-    'Sunday',
-    'Michelada de soda',
-    'Fresas con chocolate',
-    'Maracumango',
-    'Brownie con helado',
-    'Cholado',
-    'Combo Tentacion',
-    'Paleta de agua',
-    'Paleta mango biche',
-    'cono',
-    'helado casero',
-    'chococono',
-  ];
-
-  prices: number[] = [
-    700, 1000, 1700, 2000, 2500, 4000, 4200, 5000, 5500, 5600, 6500, 7000, 7500,
-    8500, 9500, 10000, 10500, 11000,
-  ];
 
     products: Products []= [
     { nombre: 'Ensalada pequeña', precio: 6500 },

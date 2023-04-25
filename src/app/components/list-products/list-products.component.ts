@@ -53,7 +53,7 @@ export class ListProductsComponent implements OnInit {
   //metodo añadido desde el servicio
   getProducts() {
     this._services.getProducts().subscribe((data) => {
-      console.log(data)
+
       if (data.length === 0) {
         this.buttonDisabled = true;
         this.total = 0;
