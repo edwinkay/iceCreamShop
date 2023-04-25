@@ -125,7 +125,6 @@ export class ListProductsComponent implements OnInit {
       producto: this.nombreProduct,
       total: this.total,
       fechaCreacion: new Date(),
-      fechaActualizacion: new Date(),
     };
     this._registroService.guardarRegistros(registrar).then(() => {
       this._services.deleteAllProducts();

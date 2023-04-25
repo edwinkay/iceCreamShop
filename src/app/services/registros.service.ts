@@ -11,4 +11,9 @@ export class RegistrosService {
   guardarRegistros(registro: any): Promise<any> {
     return this.firestore.collection('registros').add(registro);
   }
+  obtenerRegistros(): Observable<any> {
+    return this.firestore
+      .collection('registros', (ref) => ref.orderBy('fechaCreacion', 'asc'))
+      .snapshotChanges();
+  }
 }

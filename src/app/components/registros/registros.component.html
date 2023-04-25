@@ -1,1 +1,39 @@
-<p>registros works!</p>
+<div class="contenedor mt-4">
+  <div class="card">
+    <div style="margin: 16px">
+      <span class="h5">Registros de ventas</span>
+      <h5 *ngIf="registros.length == 0">No hay registros</h5>
+      <table *ngIf="registros.length > 0">
+        <thead style="border-bottom: 1px solid rgb(255, 255, 255)">
+          <th>fecha</th>
+          <th>productos</th>
+          <th>subtotal</th>
+        </thead>
+        <tbody>
+          <tr
+            style="border-bottom: 1px solid rgb(255, 255, 255)"
+            *ngFor="let registro of registros"
+          >
+            <td>{{ registro.fechaCreacion }}</td>
+            <td>{{ joinArray(registro.producto, ", ") }}</td>
+            <td>{{ registro.total | currency : " " : "symbol" : "3.0" }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        style="margin-top: 11px; display: flex; justify-content: space-around"
+      >
+        <button
+          type="text"
+          class="btn btn-secondary btn-lg mr-3"
+          routerLink="/"
+        >
+          Regresar
+        </button>
+        <div style="display: flex; justify-content: flex-end; margin-top: 12px">
+          total: {{ total | currency : " " : "symbol" : "3.0" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
