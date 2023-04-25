@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 
 import localeES from '@angular/common/locales/es'
 import { registerLocaleData } from '@angular/common';
+import { RegistrosComponent } from './components/registros/registros.component';
 registerLocaleData(localeES, 'es');
 
 @NgModule({
@@ -29,7 +30,8 @@ registerLocaleData(localeES, 'es');
     CreateProductComponent,
     NavbarComponent,
     AdjustComponent,
-    ModificarComponent
+    ModificarComponent,
+    RegistrosComponent
   ],
   imports: [
     BrowserModule,

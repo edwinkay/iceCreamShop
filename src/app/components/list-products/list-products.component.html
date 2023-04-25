@@ -15,7 +15,7 @@
         <div class="total">
           <span>Total: {{ total | currency : " " : "symbol" : "3.0" }} </span>
         </div>
-        <div>
+        <div >
           <button
             [disabled]="buttonDisabled"
             (click)="showDialog()"
@@ -33,7 +33,7 @@
             header="Detalles del pago:"
             [(visible)]="displayModal"
             [modal]="true"
-            [style]="{ width: '50%' }"
+            [style]="{ width: '65%' }"
             [responsive]="true"
             [dismissableMask]="true"
           >
@@ -64,6 +64,7 @@
                 Cancelar
               </button>
               <button
+                (click)="registrar()"
                 style="
                   background-color: rgb(31, 21, 239);
                   padding: 5px 10px;

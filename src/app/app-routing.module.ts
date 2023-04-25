@@ -4,6 +4,7 @@ import { AdjustComponent } from './components/adjust/adjust.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
+import { RegistrosComponent } from './components/registros/registros.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'list-products', pathMatch: 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'create-product', component:CreateProductComponent},
   {path: 'edit-product/:id', component:CreateProductComponent},
   {path: 'mod', component:ModificarComponent},
+  {path: 'registros', component:RegistrosComponent},
   {path: 'crear', component:AdjustComponent},
   {path: 'adjust/:id', component:AdjustComponent},
   {path:'**', redirectTo: 'list-products', pathMatch: 'full'},
